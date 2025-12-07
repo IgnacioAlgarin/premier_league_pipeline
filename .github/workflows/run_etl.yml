@@ -30,6 +30,7 @@ jobs:
         env:
           API_TOKEN: ${{ secrets.API_TOKEN }}
           DB_NAME: premier_league.db
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: python src/main.py
 
       - name: Commit and Push changes
