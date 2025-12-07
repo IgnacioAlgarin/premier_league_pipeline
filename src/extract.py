@@ -6,15 +6,15 @@ from dotenv import load_dotenv
 load_dotenv() # Una vez cargadas las variables de entorno del .env file podemos usarlas
 
 def obtener_datos(league_name):
-    api_token = os.getenv('API_TOKEN')
+    API_TOKEN = os.getenv('API_TOKEN')
 
-    if api_token is None:
+    if API_TOKEN is None:
         raise ValueError("API_TOKEN not found in environment variables")
     
     url = f'https://api.football-data.org/v4/competitions/{league_name}/standings'
 
     headers = {
-        'X-Auth-Token': api_token # Es una restricción de clave valor de la API
+        'X-Auth-Token': API_TOKEN # Es una restricción de clave valor de la API
     }
 
     response = requests.get(url, headers=headers)
